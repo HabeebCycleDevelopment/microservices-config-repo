@@ -45,7 +45,7 @@ spring:
           predicates:
           - Path=/eureka/**
 
-        - id: service-config-server
+        - id: service-config-server-1
           url: http://${app.service-config-server.host}:${app.service-config-server.port}
           predicates:
           - Path=/config/**
