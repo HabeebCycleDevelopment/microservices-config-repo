@@ -7,7 +7,6 @@ spring:
     #url: jdbc:mysql://localhost/review-db
     username: user
     password: pwd
-    driver-class-name: com.mysql.jdbc.Driver
     hikari.initializationFailTimeout: 60000
     maximum-pool-size: 10
 
