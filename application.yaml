@@ -23,7 +23,7 @@ ribbon.NFLoadBalancerPingInterval:
 
 spring:
   rabbitmq:
-    host: http://ip172-18-0-28-bq61fitim9m000b89m40-5672.direct.labs.play-with-docker.com/
+    host: "http://ip172-18-0-28-bq61fitim9m000b89m40-5672.direct.labs.play-with-docker.com/"
     #host: 127.0.0.1
     port: 5672
     username: guest
