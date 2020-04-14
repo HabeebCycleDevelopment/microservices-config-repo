@@ -18,6 +18,7 @@ eureka:
     leaseRenewalIntervalInSeconds: 5
     leaseExpirationDurationInSeconds: 5
 
+
 spring:
   rabbitmq:
     host: 127.0.0.1
@@ -28,6 +29,14 @@ spring:
   cloud.stream.kafka.binder:
     brokers: 127.0.0.1
     defaultBrokerPort: 9092
+
+  zipkin:
+    sender:
+      type: rabbit
+
+  sleuth:
+    sampler:
+      probability: 1.0
 
 # WARNING: Exposing all management endpoints over http should only be used during development, must be locked down in production!
 management.endpoint.health.show-details: "ALWAYS"
@@ -45,3 +54,13 @@ app:
     host: service-discovery-server
   service-authorization-server:
     host: service-authorization-server
+
+---
+
+spring:
+  profiles: kafka
+  cloud.stream.defaultBinder: kafka
+  zipkin.sender.type: kafka
+  kafka.bootstrap-servers: kafka:9092
+
+management.health.rabbit.enabled: false
